@@ -1,0 +1,37 @@
+
+<html x-ng-app="TTT">
+<head>
+	<title>TicTacToe</title>
+	<link rel="stylesheet" href="demo.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="ttt.js"></script>
+
+</head>
+
+<body x-ng-controller="GameController">
+
+		<header>
+		TIC-TAC-TOE 
+		</header>
+
+<div id="container">
+	<div class="row" x-ng-repeat="row in gameboard track by $index"  id="row{{$index}}">
+
+	<div x-ng-repeat="col in row track by $index" class="col{{$index}}" x-ng-click="playerTurn($parent.$index, $index);">
+	{{col}}
+	</div>
+	</div>
+</div>
+
+		<div class="sidebar">
+			<div>
+			<h1> Select an option mode to start playing!</h1>
+					<button id="button1"class="options">Player 1</button><br>
+					<button id="button2"class="options">P<br>l<br>a<br>y<br>e<br>r</br> 2</button>
+			</div>
+		</div>
+
+
+
+</body>
+</html>

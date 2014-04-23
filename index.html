@@ -1,0 +1,24 @@
+
+<html x-ng-app="TTT">
+<head>
+	<title>TicTacToe</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="ttt.js"></script>
+
+</head>
+
+<body x-ng-controller="GameController">
+
+
+<div class="row" x-ng-repeat="row in gameboard track by $index"  id="row{{$index}}">
+
+	<div x-ng-repeat="col in row track by $index" class="col{{$index}}" x-ng-click="playerTurn($parent.$index, $index);">
+	{{col}}
+	</div>
+</div>
+
+
+
+</body>
+</html>
